@@ -10,26 +10,31 @@
                 localStorage.setItem('theme-cr', 'dark'); 
             }
         }
+        
         if(localStorage.getItem('theme-cr') === 'light') { 
             document.body.classList.add('light-theme'); 
             document.querySelector('.theme-toggle i').classList.replace('fa-sun', 'fa-moon'); 
         }
 
         function enviarAnamnese() {
-            const nome = document.getElementById('clientName').value;
             const plano = document.getElementById('planSelect').value;
-            const objetivo = document.getElementById('goalSelect').value;
+            const nome = document.getElementById('clientName').value;
+            const idade = document.getElementById('clientAge').value;
             const nivel = document.getElementById('levelSelect').value;
-            const lesao = document.getElementById('injuryInput').value || "Nenhuma";
+            const saude = document.getElementById('healthInput').value || "Nenhuma restrição relatada.";
+            const objetivo = document.getElementById('goalInput').value;
             
-            if(!nome) { alert("Por favor, digite seu nome."); return; }
+            if(!nome || !idade || !objetivo) { 
+                alert("Por gentileza, preencha seu Nome, Idade e Objetivo para prosseguirmos."); 
+                return; 
+            }
             
-            // Texto formatado para o WhatsApp com quebras de linha e negrito
-            const mensagem = `Olá Camila! Gostaria de iniciar a consultoria.%0A%0A*--- ANAMNESE EXPRESSA ---*%0A*Nome:* ${nome}%0A*Plano Escolhido:* ${plano}%0A*Objetivo:* ${objetivo}%0A*Nível:* ${nivel}%0A*Lesões:* ${lesao}%0A%0AAguardo seu retorno para começarmos!`;
+            const mensagem = `Olá Camila! Preenchi a avaliação para a consultoria:%0A%0A*--- PERFIL ---*%0A*Nome:* ${nome}%0A*Idade:* ${idade} anos%0A*Nível:* ${nivel}%0A%0A*--- PLANO DESEJADO ---*%0A${plano}%0A%0A*--- SAÚDE ---*%0A${saude}%0A%0A*--- OBJETIVO ---*%0A${objetivo}%0A%0AAguardo seu contato!`;
             
-            window.open(`https://wa.me/5551900000000?text=${mensagem}`, '_blank');
+            window.open(`https://wa.me/554891049153?text=${mensagem}`, '_blank');
         }
 
-        function toggleFaq(element) { 
-            element.classList.toggle('active'); 
+        function escolherPlano(plano) {
+            const mensagem = `Olá Camila! Gostaria de saber mais informações sobre o pacote: *${plano}*.`;
+            window.open(`https://wa.me/554891049153?text=${mensagem}`, '_blank');
         }
