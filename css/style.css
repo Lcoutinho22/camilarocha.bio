@@ -284,9 +284,9 @@ h2 {
 
 /* --- PLANOS --- */
 .plan-card {
-  min-width: 220px;
+  min-width: 350px;
   flex: 1;
-  min-height: 300px;
+  min-height: 200px;
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
   border-radius: 20px;
@@ -481,8 +481,9 @@ body.light-theme .pricing-table td {
 
 /* Cards de Resultados */
 .result-card {
-  width: 250px; /* Largura fixa impede que o iPhone "invente" um tamanho */
-  height: 400px;
+  width: 250px;
+  min-width: 250px; /* Largura fixa impede que o iPhone "invente" um tamanho */
+  height: 350px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -491,8 +492,8 @@ body.light-theme .pricing-table td {
   background: #000;
 }
 .result-card img {
-  width: 250px; /* Largura fixa impede que o iPhone "invente" um tamanho */
-  height: 400px;
+  width: 100%; /* Largura fixa impede que o iPhone "invente" um tamanho */
+  height: 100%;
   object-fit: cover;
   opacity: 0.9;
   transition: 0.4s;
