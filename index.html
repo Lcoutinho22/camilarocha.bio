@@ -12,9 +12,6 @@
 
     <meta name="theme-color" content="#0a0a0a">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Camila Rocha">
 
     <meta property="og:title" content="Camila Rocha | Personal Training Premium">
     <meta property="og:description" content="Transforme seu corpo com uma metodologia exclusiva e focada nos seus resultados.">
@@ -46,6 +43,9 @@
 
 </head>
 <body>
+
+    <div class="bg-fixed"></div>
+    <div class="bg-overlay"></div>
 
     <main class="glass-card">
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar Tema"><i class="fas fa-sun"></i></button>
@@ -270,7 +270,7 @@
                     <select id="planSelect" class="form-select">
                         <option value="Ainda não sei / Quero recomendação" selected>Ainda não sei / Quero recomendação</option>
                         <optgroup label="Consultoria Online (Ambos os Sexos)">
-                            <option value="Online - Essencial (Mensal)">Online - Essencial</option>
+                            <option value="Online - Essencial">Online - Essencial</option>
                             <option value="Online - Consultoria (Trimestral)">Online - Consultoria (Trimestral)</option>
                         </optgroup>
                         <optgroup label="Presencial (Apenas Mulheres)">

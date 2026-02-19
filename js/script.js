@@ -1,4 +1,4 @@
- function toggleTheme() {
+  function toggleTheme() {
             const body = document.body;
             body.classList.toggle('light-theme');
             const icon = document.querySelector('.theme-toggle i');
