@@ -27,10 +27,10 @@
             
             const mensagem = `Olá Camila! Preenchi a pré-avaliação:%0A%0A*--- DADOS ---*%0A*Nome:* ${nome}%0A*Idade:* ${idade} anos%0A*Nível:* ${nivel}%0A*Plano de Interesse:* ${plano}%0A%0A*--- SAÚDE ---*%0A${saude}%0A%0A*--- OBJETIVO ---*%0A${objetivo}%0A%0AAguardo análise!`;
             
-            window.open(`https://wa.me/554891049153?text=${mensagem}`, '_blank');
+            window.open(`https://wa.me/5547992699201?text=${mensagem}`, '_blank');
         }
 
         function escolherPlano(plano) {
             const mensagem = `Olá Camila! Me interessei pelo plano *${plano}*. Poderia me passar mais detalhes sobre como funciona?`;
-            window.open(`https://wa.me/554891049153?text=${mensagem}`, '_blank');
+            window.open(`https://wa.me/5547992699201?text=${mensagem}`, '_blank');
         }
