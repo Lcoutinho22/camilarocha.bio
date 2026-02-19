@@ -1,4 +1,4 @@
-  function toggleTheme() {
+ function toggleTheme() {
             const body = document.body;
             body.classList.toggle('light-theme');
             const icon = document.querySelector('.theme-toggle i');
@@ -10,31 +10,27 @@
                 localStorage.setItem('theme-cr', 'dark'); 
             }
         }
-        
         if(localStorage.getItem('theme-cr') === 'light') { 
             document.body.classList.add('light-theme'); 
             document.querySelector('.theme-toggle i').classList.replace('fa-sun', 'fa-moon'); 
         }
 
         function enviarAnamnese() {
-            const plano = document.getElementById('planSelect').value;
             const nome = document.getElementById('clientName').value;
             const idade = document.getElementById('clientAge').value;
             const nivel = document.getElementById('levelSelect').value;
+            const plano = document.getElementById('planSelect').value;
             const saude = document.getElementById('healthInput').value || "Nenhuma restrição relatada.";
             const objetivo = document.getElementById('goalInput').value;
             
-            if(!nome || !idade || !objetivo) { 
-                alert("Por gentileza, preencha seu Nome, Idade e Objetivo para prosseguirmos."); 
-                return; 
-            }
+            if(!nome || !idade || !objetivo) { alert("Por favor, preencha Nome, Idade e Objetivo."); return; }
             
-            const mensagem = `Olá Camila! Preenchi a avaliação para a consultoria:%0A%0A*--- PERFIL ---*%0A*Nome:* ${nome}%0A*Idade:* ${idade} anos%0A*Nível:* ${nivel}%0A%0A*--- PLANO DESEJADO ---*%0A${plano}%0A%0A*--- SAÚDE ---*%0A${saude}%0A%0A*--- OBJETIVO ---*%0A${objetivo}%0A%0AAguardo seu contato!`;
+            const mensagem = `Olá Camila! Preenchi a pré-avaliação:%0A%0A*--- DADOS ---*%0A*Nome:* ${nome}%0A*Idade:* ${idade} anos%0A*Nível:* ${nivel}%0A*Plano de Interesse:* ${plano}%0A%0A*--- SAÚDE ---*%0A${saude}%0A%0A*--- OBJETIVO ---*%0A${objetivo}%0A%0AAguardo análise!`;
             
             window.open(`https://wa.me/554891049153?text=${mensagem}`, '_blank');
         }
 
         function escolherPlano(plano) {
-            const mensagem = `Olá Camila! Gostaria de saber mais informações sobre o pacote: *${plano}*.`;
+            const mensagem = `Olá Camila! Me interessei pelo plano *${plano}*. Poderia me passar mais detalhes sobre como funciona?`;
             window.open(`https://wa.me/554891049153?text=${mensagem}`, '_blank');
         }
