@@ -14,190 +14,195 @@
 <body>
 
     <div class="glass-card">
-        <button class="theme-toggle" onclick="toggleTheme()">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alterar Tema">
             <i class="fas fa-sun"></i>
         </button>
+
+        <div class="lang-container">
+            <button class="lang-btn" onclick="toggleLangMenu()" aria-label="Trocar Idioma">
+                <i class="fas fa-globe"></i>
+            </button>
+            <div class="lang-menu" id="langMenu">
+                <button onclick="changeLanguage('pt')" class="lang-option">PT</button>
+                <button onclick="changeLanguage('en')" class="lang-option">EN</button>
+                <button onclick="changeLanguage('es')" class="lang-option">ES</button>
+            </div>
+        </div>
+
+        <div class="share-container">
+            <button class="share-toggle" onclick="toggleShareMenu()" aria-label="Compartilhar">
+                <i class="fas fa-share-nodes"></i>
+            </button>
+            <div class="share-menu" id="shareMenu">
+                <a href="javascript:void(0)" onclick="shareTo('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="javascript:void(0)" onclick="shareTo('facebook')"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="javascript:void(0)" onclick="shareTo('linkedin')"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="javascript:void(0)" onclick="shareTo('tiktok')"><i class="fab fa-tiktok"></i> TikTok</a>
+            </div>
+        </div>
 
         <div class="profile-section">
             <img src="./Image/logo.jpeg" alt="Logo Camila Rocha Personal Training" class="profile-img-top">
             <h1>Camila Rocha</h1>
-            <h2>Personal Training</h2>
-            <p class="bio-text">Uma consultoria fitness completa que conecta treino, propósito e movimento para resultados reais e duradouros.</p>
+            <h2 data-i18n="title_role">Personal Training</h2>
+            <p class="bio-text" data-i18n="bio_desc">Uma consultoria fitness completa que conecta treino, propósito e movimento para resultados reais e duradouros.</p>
         </div>
 
-        <div class="action-grid">
+        <div class="action-grid reveal">
 
-            <a href="https://wa.me/5547992699201" class="btn-action">
+            <a href="https://wa.me/5548991087177" class="btn-action">
                 <i class="fab fa-whatsapp"></i> 
-                <span>Falar Agora</span>
+                <span data-i18n="btn_talk_now">Falar Agora</span>
             </a>
 
             <a href="#planos" class="btn-action">
                 <i class="fas fa-clipboard-list"></i>
-                <span>Ver Planos</span>
+                <span data-i18n="btn_see_plans">Ver Planos</span>
                 </a>
         </div>
 
-        <div class="section-header">
-            <h3>Sobre Camila Rocha</h3>
+        <div class="section-header reveal">
+            <h3 data-i18n="sec_about">Sobre Camila Rocha</h3>
         </div>
-        <div class="about-card">
+        <div class="about-card reveal">
             <img src="./Image/perfil.jpeg" alt="Foto de Camila Rocha" class="about-profile-pic">
             
             <div class="about-content">
-                <p class="about-text">
+                <p class="about-text" data-i18n="about_p1">
                     Olá, sou <span class="about-highlight">Camila Rocha</span>. personal trainer há aproximadamente 10 anos, com foco no atendimento presencial e com muitas mulheres já transformadas com resultados reais.
                     Também trabalho com consultoria online há cerca de 5 a 6 anos, acompanhando mulheres com método e direção. Meu foco é ajudar cada <span class="about-highlight">mulher a resgatar sua identidade, feminilidade e confiança através do movimento e de hábitos saudáveis.</span>. Porque eu acredito que constância gera resultado.
                 </p>
                 <div class="about-stats">
                     <div class="stat-item">
                         <div class="stat-number">+10</div>
-                        <div class="stat-label">Anos Exp.</div>
+                        <div class="stat-label" data-i18n="stat_years">Anos Exp.</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">Treinos</div>
-                        <div class="stat-label">Personalizados</div>
+                        <div class="stat-number" data-i18n="stat_workouts">Treinos</div>
+                        <div class="stat-label" data-i18n="stat_custom">Personalizados</div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="section-header reveal">
+            <h3 data-i18n="sec_online_plans">Planos Online</h3>
+        </div>
+        <div class="carousel-container reveal">
+            <div class="carousel-track-manual">
+                <div class="plan-card featured">
+                    <div class="plan-badge" data-i18n="badge_most_chosen">Mais Escolhido</div>
+                    <div class="plan-title" data-i18n="plan_premium">Premium (Trimestral)</div>
+                    <div class="gender-highlight online" data-i18n="gender_both">Para ambos os sexos</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong data-i18n="feat_premium_all">Tudo do Plano Essencial</strong></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_weekly">Acompanhamento Semanal</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_feedback">Feedback Individual</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_video">Correções De Execução Por Video</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_adjust">Ajustes Sempre Que Necessário</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_3sheets">3 Planilhas Ao Longo Dos 3 Meses</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_updates">(INICIAL + 2 ATUALIZAÇÕES DE TREINO)</span></li>
+                    </ul>
+                    <button onclick="escolherPlano('Online Premium')" class="plan-btn" data-i18n="btn_evolve">Quero Evoluir</button>
+                </div>
+
+                <div class="plan-card">
+                    <div class="plan-title" data-i18n="plan_essential">Essencial</div>
+                    <div class="gender-highlight online" data-i18n="gender_both">Para ambos os sexos</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_anamnesis">Anamnese Completa</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_initial_eval">Avaliação Inicial</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_custom_workout">Treino Personalizado</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="feat_app_access">Acesso ao Aplicativo</span></li>
+                    </ul>
+                    <button onclick="escolherPlano('Online Essencial')" class="plan-btn" data-i18n="btn_choose_ess">Escolher Essencial</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="plans-cta-footer">
+            <a href="https://wa.me/5548991087177" class="link-cta" data-i18n="cta_doubt">Dúvida sobre qual plano escolher? Fale comigo <i class="fas fa-arrow-right"></i></a>
         </div>
 
         <div class="section-header" id="planos">
-            <h3>Plano Presencial</h3>
+            <h3 data-i18n="sec_pres_plans">Plano Presencial</h3>
         </div>
-        <div class="carousel-container">
-            <div class="carousel-track-manual">
-                <div class="plan-card featured" style="margin: 0 auto; min-width: 100%;">
-                    <div class="plan-badge">Acompanhamento VIP</div>
-                    <div class="plan-title">Treino Presencial</div>
-                    <div class="gender-highlight">Apenas para Mulheres</div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Treinos de 1h por Aula</li>
-                        <li><i class="fas fa-check"></i> Anamnese Inicial</li>
-                        <li><i class="fas fa-check"></i> Avaliação Física Completa</li>
-                        <li><i class="fas fa-check"></i> Planilha Personalizadas via App</li>
-                        <li><i class="fas fa-check"></i> Suporte Integral Via  WhatsApp</li>
-                    </ul>
-                    <button onclick="escolherPlano('Presencial VIP')" class="plan-btn">Consultar Vagas</button>
-                </div>
+        <div style="padding: 20px 10px; display: flex; justify-content: center;" class="reveal">
+            <div class="plan-card featured" style="width: 100%; max-width: 400px; min-width: auto; flex: none;">
+                <div class="plan-badge" data-i18n="badge_vip">Acompanhamento VIP</div>
+                <div class="plan-title" data-i18n="plan_presential">Treino Presencial</div>
+                <div class="gender-highlight" data-i18n="gender_women">Apenas para Mulheres</div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_1h">Treinos de 1h por Aula</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_anamnesis_init">Anamnese Inicial</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_phys_eval">Avaliação Física Completa</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_sheets_app">Planilha Personalizadas via App</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_support">Suporte Integral Via WhatsApp</span></li>
+                </ul>
+                <button onclick="escolherPlano('Presencial VIP')" class="plan-btn" data-i18n="btn_consult">Consultar Vagas</button>
             </div>
         </div>
 
-        <div class="section-header"><h3>Locais de Atendimento</h3></div>
+        <div class="section-header reveal"><h3 data-i18n="sec_locations">Locais de Atendimento</h3></div>
         
-        <div class="location-card">
+        <div class="location-card reveal">
             <div class="location-title">
                 <i class="fas fa-map-marker-alt"></i> Academia Neweel</div>
             <div style="overflow-x: auto;">
                 <table class="pricing-table">
                     <thead>
                         <tr>
-                            <th>Frequência</th>
-                            <th>Aulas/Mês</th>
-                            <th>Valor Aula</th>
-                            <th>Valor Pacote</th>
+                            <th data-i18n="th_frequency">Frequência</th>
+                            <th data-i18n="th_classes">Aulas/Mês</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>3x /semana</td>
-                            <td>12 aulas</td>
-                            <td>R$ 75</td>
-                            <td class="price-highlight">R$ 900</td>
+                            <td data-i18n="td_3x">3x /semana</td>
+                            <td data-i18n="td_12_classes">12 aulas</td>
                         </tr>
                         <tr>
-                            <td>2x /semana</td>
-                            <td>08 aulas</td>
-                            <td>R$ 75</td>
-                            <td class="price-highlight">R$ 600</td>
+                            <td data-i18n="td_2x">2x /semana</td>
+                            <td data-i18n="td_8_classes">08 aulas</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div class="location-card">
+        <div class="location-card reveal">
             <div class="location-title">
                 <i class="fas fa-map-marker-alt"></i> RAR • Cristal • Dunnafit</div>
             <div style="overflow-x: auto;">
                 <table class="pricing-table">
                     <thead>
                         <tr>
-                            <th>Frequência</th>
-                            <th>Aulas/Mês</th>
-                            <th>Valor Aula</th>
-                            <th>Valor Pacote</th>
+                            <th data-i18n="th_frequency">Frequência</th>
+                            <th data-i18n="th_classes">Aulas/Mês</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>3x /semana</td>
-                            <td>12 aulas</td>
-                            <td>R$ 70</td>
-                            <td class="price-highlight">R$ 840</td>
+                            <td data-i18n="td_3x">3x /semana</td>
+                            <td data-i18n="td_12_classes">12 aulas</td>
                         </tr>
                         <tr>
-                            <td>2x /semana</td>
-                            <td>08 aulas</td>
-                            <td>R$ 70</td>
-                            <td class="price-highlight">R$ 560</td>
+                            <td data-i18n="td_2x">2x /semana</td>
+                            <td data-i18n="td_8_classes">08 aulas</td>
                         </tr>
                         <tr>
-                            <td>1x /semana</td>
-                            <td>04 aulas</td>
-                            <td>R$ 70</td>
-                            <td class="price-highlight">R$ 280</td>
+                            <td data-i18n="td_1x">1x /semana</td>
+                            <td data-i18n="td_4_classes">04 aulas</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div class="section-header">
-            <h3>Planos Online</h3>
+        <div class="section-header reveal">
+            <h3 data-i18n="sec_results">Resultados Reais</h3>
         </div>
-        <div class="carousel-container">
-            <div class="carousel-track-manual">
-                <div class="plan-card">
-                    <div class="plan-title">Essencial</div>
-                    <div class="gender-highlight online">Para ambos os sexos</div>
-                    <div class="plan-price">R$ 147,00<span>Avista</span></div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Anamnese Completa</li>
-                        <li><i class="fas fa-check"></i> Avaliação Inicial</li>
-                        <li><i class="fas fa-check"></i> Treino Personalizado</li>
-                        <li><i class="fas fa-check"></i> Acesso ao Aplicativo</li>
-                    </ul>
-                    <button onclick="escolherPlano('Online Essencial')" class="plan-btn">Escolher Essencial</button>
-                </div>
-
-                <div class="plan-card featured">
-                    <div class="plan-badge">Mais Escolhido</div>
-                    <div class="plan-title">Premium (Trimestral)</div>
-                    <div class="gender-highlight online">Para ambos os sexos</div>
-                    <div class="plan-price">R$ 367,00<span>/Avista ou 3x de R$ 122,33</span></div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> <strong>Tudo do Plano Essencial</strong></li>
-                        <li><i class="fas fa-check"></i> Acompanhamento Semanal</li>
-                        <li><i class="fas fa-check"></i> Feedback Individual</li>
-                        <li><i class="fas fa-check"></i> Correções De Execução Por Video</li>
-                        <li><i class="fas fa-check"></i> Ajustes Sempre Que Necessário</li>
-                        <li><i class="fas fa-check"></i>3 Panilhas Ao Longo Dos 3 Meses</li>
-                        <li><i class="fas fa-check"></i> (INICIAL + 2 ATUALIZAÇÕES DE TREINO)</li>
-                    </ul>
-                    <button onclick="escolherPlano('Online Premium')" class="plan-btn">Quero Evoluir</button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="plans-cta-footer">
-            <a href="https://wa.me/5547992699201" class="link-cta">Dúvida sobre qual plano escolher? Fale comigo <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <div class="section-header">
-            <h3>Resultados Reais</h3>
-        </div>
-        <div class="carousel-container">
+        <div class="carousel-container reveal">
             <div class="carousel-track-manual">
                 <div class="result-card">
                     <img src="./Image/resultado-2.jpeg" alt="Antes e Depois 2">
@@ -213,10 +218,10 @@
             </div>
         </div>
 
-        <div class="section-header">
-            <h3>Feedbacks Das Alunas(os)</h3>
+        <div class="section-header reveal">
+            <h3 data-i18n="sec_feedbacks">Feedbacks Das Alunas(os)</h3>
         </div>
-        <div class="carousel-wrapper-auto">
+        <div class="carousel-wrapper-auto reveal">
             <div class="carousel-track-feedback">
                 <img src="./Image/feed-1.jpeg" alt="Feedback Cliente Camila Rocha" class="feedback-image-card">
                 <img src="./Image/feed-2.jpeg" alt="Feedback Cliente Camila Rocha" class="feedback-image-card">
@@ -228,62 +233,62 @@
             </div>
         </div>
 
-        <div class="section-header" style="margin-top: 30px;"><h3>Pré-Avaliação Gratuita</h3></div>
-        <div class="schedule-form">
+        <div class="section-header" style="margin-top: 30px;"><h3 data-i18n="sec_form_title">Pré-Avaliação Gratuita</h3></div>
+        <div class="schedule-form reveal">
             <div class="form-group">
-                <label class="form-label">Nome Completo</label>
-                <input type="text" id="clientName" class="form-input" placeholder="Seu nome">
+                <label class="form-label" data-i18n="label_name">Nome Completo</label>
+                <input type="text" id="clientName" class="form-input" placeholder="Seu nome" data-i18n-placeholder="placeholder_name">
             </div>
             
             <div class="form-row">
 
                 <div class="form-group">
-                    <label class="form-label">Idade</label>
-                    <input type="number" id="clientAge" class="form-input" placeholder="Ex: 30">
+                    <label class="form-label" data-i18n="label_age">Idade</label>
+                    <input type="number" id="clientAge" class="form-input" placeholder="Ex: 30" data-i18n-placeholder="placeholder_age">
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">Experiência de Treino</label>
+                    <label class="form-label" data-i18n="label_exp">Experiência de Treino</label>
                     <select id="levelSelect" class="form-select">
-                        <option value="Nunca treinei">Nunca treinei</option>
-                        <option value="Iniciante">Iniciante</option>
-                        <option value="Intermediário">Intermediário</option>
-                        <option value="Avançado">Avançado</option>
+                        <option value="Nunca treinei" data-i18n="opt_exp1">Nunca treinei</option>
+                        <option value="Iniciante" data-i18n="opt_exp2">Iniciante</option>
+                        <option value="Intermediário" data-i18n="opt_exp3">Intermediário</option>
+                        <option value="Avançado" data-i18n="opt_exp4">Avançado</option>
                     </select>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Plano Pretendido</label>
+                <label class="form-label" data-i18n="label_plan">Plano Pretendido</label>
                 <select id="planSelect" class="form-select">
-                    <option value="Ainda não sei">Ainda não sei / Quero recomendação</option>
-                    <option value="Presencial VIP (Apenas Mulheres)">Presencial VIP (Apenas Mulheres)</option>
-                    <option value="Online - Start (Ambos os Sexos)">Online - Essencial (Ambos os Sexos)</option>
-                    <option value="Online - Elite (Ambos os Sexos)">Online -Premium (Ambos os Sexos)</option>
+                    <option value="Ainda não sei" data-i18n="opt_plan1">Ainda não sei / Quero recomendação</option>
+                    <option value="Presencial VIP (Apenas Mulheres)" data-i18n="opt_plan2">Presencial VIP (Apenas Mulheres)</option>
+                    <option value="Online - Start (Ambos os Sexos)" data-i18n="opt_plan3">Online - Essencial (Ambos os Sexos)</option>
+                    <option value="Online - Elite (Ambos os Sexos)" data-i18n="opt_plan4">Online - Premium (Ambos os Sexos)</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Possui lesões ou problemas de saúde?</label>
-                <textarea id="healthInput" class="form-input" placeholder="Descreva aqui se tiver alguma restrição..."></textarea>
+                <label class="form-label" data-i18n="label_health">Possui lesões ou problemas de saúde?</label>
+                <textarea id="healthInput" class="form-input" placeholder="Descreva aqui se tiver alguma restrição..." data-i18n-placeholder="placeholder_health"></textarea>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Qual seu principal objetivo?</label>
-                <textarea id="goalInput" class="form-input" placeholder="Ex: Quero emagrecer e definir..."></textarea>
+                <label class="form-label" data-i18n="label_goal">Qual seu principal objetivo?</label>
+                <textarea id="goalInput" class="form-input" placeholder="Ex: Quero emagrecer e definir..." data-i18n-placeholder="placeholder_goal"></textarea>
             </div>
 
             <button onclick="enviarAnamnese()" class="btn-schedule">
-                <i class="fab fa-whatsapp"></i> Enviar Pré-Avaliação
+                <i class="fab fa-whatsapp"></i> <span data-i18n="btn_send_form">Enviar Pré-Avaliação</span>
             </button>
         </div>
 
-        <div class="cta-final-container">
-            <a href="https://wa.me/5547992699201" class="cta-final-box">
-                <div class="cta-final-title">Comece Sua Transformação</div>
-                <p class="cta-final-sub">Agende sua avaliação e dê o primeiro passo hoje.</p>
+        <div class="cta-final-container reveal">
+            <a href="https://wa.me/5548991087177" class="cta-final-box">
+                <div class="cta-final-title" data-i18n="cta_final_title">Comece Sua Transformação</div>
+                <p class="cta-final-sub" data-i18n="cta_final_sub">Agende sua avaliação e dê o primeiro passo hoje.</p>
                 <div class="cta-final-btn-inner">
-                    <i class="fab fa-whatsapp"></i> Falar com a Treinadora
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="cta_final_btn">Falar com a Treinadora</span>
                 </div>
             </a>
         </div>
@@ -293,7 +298,7 @@
                 <a href="https://www.instagram.com/camiirochapersonal/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
             <p>© 2026 Camila Rocha Personal Training.</p>
-            <p style="margin-top:5px; opacity:0.5; font-size:0.7rem;">By Coutinho Tech</p>
+            <p style="margin-top:5px; opacity:0.5; font-size:0.7rem;">Desenvolvido pela <a href="https://www.instagram.com/coutinho.tech22/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Coutinho Tech</a></p>
         </footer>
     </div>
     <script src="./js/script.js"></script>
