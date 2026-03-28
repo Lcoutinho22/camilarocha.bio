@@ -10,6 +10,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '866559321031543');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=866559321031543&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -88,35 +106,33 @@
         <div class="section-header reveal">
             <h3 data-i18n="sec_online_plans">Planos Online</h3>
         </div>
-        <div class="carousel-container reveal">
-            <div class="carousel-track-manual">
-                <div class="plan-card featured">
-                    <div class="plan-badge" data-i18n="badge_most_chosen">Mais Escolhido</div>
-                    <div class="plan-title" data-i18n="plan_premium">Premium (Trimestral)</div>
-                    <div class="gender-highlight online" data-i18n="gender_both">Para ambos os sexos</div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> <strong data-i18n="feat_premium_all">Tudo do Plano Essencial</strong></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_weekly">Acompanhamento Semanal</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_feedback">Feedback Individual</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_video">Correções De Execução Por Video</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_adjust">Ajustes Sempre Que Necessário</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_3sheets">3 Planilhas Ao Longo Dos 3 Meses</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_updates">(INICIAL + 2 ATUALIZAÇÕES DE TREINO)</span></li>
-                    </ul>
-                    <button onclick="escolherPlano('Online Premium')" class="plan-btn" data-i18n="btn_evolve">Quero Evoluir</button>
-                </div>
+        <div style="padding: 20px 10px; display: flex; flex-direction: column; align-items: center; gap: 20px;" class="reveal">
+            <div class="plan-card featured" style="width: 100%; max-width: 400px; min-width: auto; flex: none;">
+                <div class="plan-badge" data-i18n="badge_most_chosen">Mais Escolhido</div>
+                <div class="plan-title" data-i18n="plan_premium">Premium (Trimestral)</div>
+                <div class="gender-highlight online" data-i18n="gender_both">Para ambos os sexos</div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> <strong data-i18n="feat_premium_all">Tudo do Plano Essencial</strong></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_weekly">Acompanhamento Semanal</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_feedback">Feedback Individual</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_video">Correções De Execução Por Video</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_adjust">Ajustes Sempre Que Necessário</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_3sheets">3 Planilhas Ao Longo Dos 3 Meses</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_updates">(INICIAL + 2 ATUALIZAÇÕES DE TREINO)</span></li>
+                </ul>
+                <button onclick="escolherPlano('Online Premium')" class="plan-btn" data-i18n="btn_evolve">Quero Evoluir</button>
+            </div>
 
-                <div class="plan-card">
-                    <div class="plan-title" data-i18n="plan_essential">Essencial</div>
-                    <div class="gender-highlight online" data-i18n="gender_both">Para ambos os sexos</div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_anamnesis">Anamnese Completa</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_initial_eval">Avaliação Inicial</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_custom_workout">Treino Personalizado</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="feat_app_access">Acesso ao Aplicativo</span></li>
-                    </ul>
-                    <button onclick="escolherPlano('Online Essencial')" class="plan-btn" data-i18n="btn_choose_ess">Escolher Essencial</button>
-                </div>
+            <div class="plan-card" style="width: 100%; max-width: 400px; min-width: auto; flex: none;">
+                <div class="plan-title" data-i18n="plan_essential">Essencial</div>
+                <div class="gender-highlight online" data-i18n="gender_both">Para ambos os sexos</div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_anamnesis">Anamnese Completa</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_initial_eval">Avaliação Inicial</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_custom_workout">Treino Personalizado</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="feat_app_access">Acesso ao Aplicativo</span></li>
+                </ul>
+                <button onclick="escolherPlano('Online Essencial')" class="plan-btn" data-i18n="btn_choose_ess">Escolher Essencial</button>
             </div>
         </div>
         
